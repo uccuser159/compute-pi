@@ -11,7 +11,7 @@ EXECUTABLE = \
 
 GIT_HOOKS := .git/hooks/applied
 
-METHOD ?= BASELINE
+METHOD ?= LEIBNIZ
 
 $(GIT_HOOKS):
 	@scripts/install-git-hooks
@@ -60,7 +60,7 @@ gencsv: default
 	done > result_clock_gettime.csv
 
 plot: gencsv
-	gnuplot scripts/runtime.gp
+	gnuplot scripts/runtime_leibniz.gp
 
 gencsv-methods: default
 	for i in `seq 1008 4000 1000000`; do \
